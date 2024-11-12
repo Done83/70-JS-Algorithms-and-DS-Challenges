@@ -1,15 +1,16 @@
-function isPalindrome(str) {
-  let reverseString = "";
+// function isPalindrome(str) {
+//   let formattedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+//   let reversedStr = '';
+//   for (let i = formattedStr.length - 1; i >= 0; i--) {
+//     reversedStr += formattedStr[i]
+//   }
 
-  for (let i = str.length - 1; i >= 0; i--) {
-    reverseString += str[i];
-  }
+//   return formattedStr === reversedStr;
+// }
 
-  if (reverseString.toLowerCase() === str.toLowerCase()) {
-    return true;
-  } else {
-    return false;
-  }
+// More fancy way to approach this function :-)
+const isPalindrome = (str) => {
+  let formattedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '')
+  return formattedStr === formattedStr.split('').reverse().join('');
 }
-
 module.exports = isPalindrome;
